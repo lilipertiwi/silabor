@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>All Supplise</title>
+		<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+		<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+	</head>
+	<body>
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+		<h4>Daftar Semua Supplies</h4>
+		<table border="1" style="width:relative;">
+			<tr>
+				<th>Id</th>
+				<th>Jenis Barang</th>
+				<th>Nama Barang</th>
+				<th>Jumlah Barang</th>
+				<th>Deskripsi Barang</th>
+			</tr>
+			<tr th:each="supplies : ${supplies}">
+				<td th:text="${supplies.id}"></td>
+				<td th:text="${supplies.jenis}"></td>
+				<td th:text="${supplies.nama}"></td>
+				<td th:text="${supplies.jumlah}"></td>
+				<td th:text="${supplies.deskripsi}"></td>
+				<td><a th:href="@{'/lab/stok/ubah'}">Ubah</a></td>
+			</tr>
+		</table>
+	</body>
+
+</html>

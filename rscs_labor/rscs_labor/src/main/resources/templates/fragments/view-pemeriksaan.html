@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Pemeriksaan</title>
+
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+<body>
+    <nav th:replace="fragments/fragment :: navbar"></nav>
+
+    <div class="container-fluid">
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header" th:text="Daftar Permintaan">
+                    </div>
+                    <div class="card-body">
+                        <p th:text="'Id: ' + ${pemeriksaan.id}"></p>
+                        <p th:text="'Tanggal Pengajuan: ' + ${pemeriksaan.tanggal_pengajuan}"></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
